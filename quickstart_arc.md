@@ -10,7 +10,7 @@ ARC Commander and SWATE to store your data and enrich it with metadata.
 
 This document is work in progress: If you experience any
 inconsistencies, have questions or would like to suggest additions to
-it, please feel free to send a message to: info@nfdi4plants.org.
+it, please feel free to send a message to: <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">info@nfdi4plants.org</a>.
 
 - [Setup and environment](#setup-and-environment)
   - [Required softwares](#required-softwares)
@@ -25,6 +25,7 @@ it, please feel free to send a message to: info@nfdi4plants.org.
   - [Invite collaborators](#invite-collaborators)
 - [Data annotation](#data-annotation)
   - [SWATE](#swate)
+- [DataPLANT Support](#dataplant-support)
 
 ## Setup and environment
 
@@ -56,25 +57,25 @@ mkdir ~/QuickStartARC;
 cd ~/QuickStartARC
 ```
 
-1. Test if the ARC Commander is functional by displaying the ARC commander version and help menu:
+2. Test if the ARC Commander is functional by displaying the ARC commander version and help menu:
 
-  ```bash
-  arc --version
-  arc --help
-  ```
-  
-  <img src="media/image3.png" alt="drawing" width="400"/>
+```bash
+arc --version
+arc --help
+```
 
-1. Initialize your ARC by executing
-  
-  ```bash
-  arc init
-  ```
+<img src="media/image3.png" alt="drawing" width="400"/>
 
-1. This will create the general ARC folder structure:
+3. Initialize your ARC by executing
 
-    <img src="media/image4.png" alt="drawing" width="400"/>
-    <img src="media/image5.png" alt="drawing" width="400"/>
+```bash
+arc init
+```
+
+4. This will create the general ARC folder structure:
+
+<img src="media/image4.png" alt="drawing" width="400"/>
+<img src="media/image5.png" alt="drawing" width="400"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -84,9 +85,9 @@ cd ~/QuickStartARC
 
 The ISA investigation workbook allows you to record administrative metadata of your project. Add the isa.investigation.xlsx workbook including an identifier to your ARC with
 
-  ```bash
-  arc i create -i “QuickStartInvestigation”
-  ```
+```bash
+arc i create -i “QuickStartInvestigation”
+```
 
 ### ISA studies and assays
 
@@ -94,28 +95,28 @@ The ISA study and ISA assay workbooks allow you to annotate your experimental da
 
 1. Add an isa.study.xlsx workbook including an identifier to your ARC with
 
-  ```bash
-  arc s create -s “QuickStartStudy”
-  ```
+```bash
+arc s create -s “QuickStartStudy”
+```
   
 2. Add an isa.assay.xlsx workbook including an identifier to your ARC with
 
-  ```bash
-  arc a create -s “QuickStartStudy” -a “QuickStartAssay”
-  ```
+```bash
+arc a create -s “QuickStartStudy” -a “QuickStartAssay”
+```
 
 > Note: An assay must be linked to a study. If a study does not exist, it will be created automatically in this step.
 
 - The ARC Commander will add a subdirectories to the *studies* and *assays* folder. Your ARC should
     look similar to this now:  
 
-    <img src="media/image6.png" alt="drawing" width="400"/>
+<img src="media/image6.png" alt="drawing" width="400"/>
 
 - These steps can be repeated to add as many studies and assays as needed.
     Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the
     same StudyIdentifier in the text editor window is used.
 
-Place the data for each assay in the respective dataset folder.
+3. Place the data for each assay in the respective dataset folder.
 
 <div style="page-break-after: always;"></div>
 
@@ -123,8 +124,7 @@ Place the data for each assay in the respective dataset folder.
 
 ### DataPLANT registration and access
 
-In case you are not a member of DataPLANT yet, please visit <https://register.nfdi4plants.org> to register. Afterwards, you will be granted access to DataPLANT’s DataHUB, available under <https://git.nfdi4plants.org>.
-The DataHUB allows you to share your ARCs with registered lab or project partners.
+In case you are not a member of DataPLANT yet, please visit <https://register.nfdi4plants.org> to register. Afterwards, you will be granted access to DataPLANT’s DataHUB, available under <https://git.nfdi4plants.org>. The DataHUB allows you to share your ARCs with registered lab or project partners.
 
 <img src="media/image7.png" alt="drawing" width="400"/>
 
@@ -172,7 +172,7 @@ ARC Commander synchronization:
     `git config --global user.name <your_name>`  
     `git config --global user.email <your_email>`
 
-1. Check if the upload was successful by visiting the respective URL.
+2. Check if the upload was successful by visiting the respective URL.
 
    <img src="media/image12.png" alt="drawing" width="400"/>
 
@@ -184,29 +184,20 @@ ARC Commander synchronization:
     Search for registered researchers and select a role for each
     individually. These roles come along with different rights. In
     short:  
-    *Guest:* Have the least rights. Advised to use this for people you
-    are asking for consultancy. *Developer:* The choice for most people
-    you want to invite to your ARC. Developers have read and write
-    access, but cannot maintain the project on the DataHUB, e.g.
-    inviting others.  
-    *Maintainer:* Gives the person the same rights as you have (except
-    of removing you from your own project). This is recommended for
-    inviting PIs or group leaders allowing them to add their group
-    members for data upload or analysis to the project as well.  
+    - *Guest:* Have the least rights. This is recommended for people you ask for consultancy.
+    - *Developer:* The choice for most people you want to invite to your ARC. Developers have read and write access, but cannot maintain the project on the DataHUB, e.g. inviting others.  
+    - *Maintainer:* Gives the person the same rights as you have (except of removing you from your own project). This is recommended for inviting PIs or group leaders allowing them to add their group
+    members for data upload or analysis to the project as well.
+
     <img src="media/image13.png" alt="drawing" width="400"/>
 
-> Note: A detailed usage instruction for the ARC Commander can be found
-> [here](https://github.com/nfdi4plants/arcCommander/wiki/Detailed-usage-instruction).
+> Note: A detailed usage instruction for the ARC Commander can be found [here](https://github.com/nfdi4plants/arcCommander/wiki/Detailed-usage-instruction).
 
 <div style="page-break-after: always;"></div>
 
 ## Data annotation
 
-Your ARC should now contain one isa.investigation.xlsx and one or
-    more isa.study.xlsx and isa.assay.xlsx file(s), respectively. Use
-    the isa.study.xlsx to describe the characteristics of your samples,
-    e.g. how you grew your plant, and isa.assay.xlsx to annotate
-    experimental analyses.
+Your ARC should now contain one isa.investigation.xlsx and one or more isa.study.xlsx and isa.assay.xlsx file(s), respectively. Use the isa.study.xlsx to describe the characteristics of your samples, e.g. how you grew your plant, and isa.assay.xlsx to annotate the experimental analyses.
 
 ### SWATE
 
@@ -215,16 +206,12 @@ DataPLANT provides the Excel Add-In SWATE to support you in data annotation.
 - [ ] Download and install the newest SWATE version according to [these instructions](https://github.com/nfdi4plants/Swate/wiki/docs01-installing-Swate#desktop-installation).
 - [ ] In case you use an Excel version older than Excel 2019, please install [SWATE for Excel online](https://github.com/nfdi4plants/Swate/wiki/docs01-installing-Swate#quickstart).
 
-- Use the *create annotation table* button in the yellow pop-up box
-    (this only appears if you start SWATE on an Excel worksheet without
-    an existing annotation table). An annotation table with the building
-    blocks *Source Name* and *Sample Name* will be generated.  
+- Use the *create annotation table* button in the yellow pop-up box (this only appears if you start SWATE on an Excel worksheet without an existing annotation table). An annotation table with the building blocks *Source Name* and *Sample Name* will be generated.  
 
    <img src="media/image14.png" alt="drawing" width="400"/>
    <img src="media/image15.png" alt="drawing" width="400"/>
 
-- Annotate your table with help of the [annotation principles](https://nfdi4plants.github.io/AnnotationPrinciples/). In short, *Characteristics* are used for study descriptions and describe inherent properties of the source material (e.g. a certain strain). *Parameters* describe steps in your experimental workflow (e.g. an instrument model or a growth chamber), and *Factors* describe independent variables that result in a specific output
-    (e.g. the light intensity).
+- Annotate your table with help of the [annotation principles](https://nfdi4plants.github.io/AnnotationPrinciples/). In short, *Characteristics* are used for study descriptions and describe inherent properties of the source material (e.g. a certain strain). *Parameters* describe steps in your experimental workflow (e.g. an instrument model or a growth chamber), and *Factors* describe independent variables that result in a specific output (e.g. the light intensity).
 
 - The combination of ISA (Characteristics, Parameter, Factor) and
         a biological or technological ontology (e.g. temperature,
@@ -233,59 +220,58 @@ DataPLANT provides the Excel Add-In SWATE to support you in data annotation.
         or as the factor your study is based on (Parameter
         \[temperature\] or Factor \[temperature\]).
 
-- Customize your table by adding building blocks:
+#### Customize your table by adding building blocks:  
 
-    1. Choose the type of building block you want to add (A).
+1. Choose the type of building block you want to add (A).
 
-    2. If you chose a descriptive building block type (building blocks
-        besides Sample Name, Source Name, and Data File Name), use
-        search field (B) to search for an Ontology Term. SWATE accesses
-        the SwateDB with a list of established external ontologies
-        designated suitable for use in plant science. In addition, we
-        feature our own ontology NFDI4PSO to extend the DB with missing,
-        but necessary terms.
+2. If you chose a descriptive building block type (building blocks
+    besides Sample Name, Source Name, and Data File Name), use
+    search field (B) to search for an Ontology Term. SWATE accesses
+    the SwateDB with a list of established external ontologies
+    designated suitable for use in plant science. In addition, we
+    feature our own ontology NFDI4PSO to extend the DB with missing,
+    but necessary terms.
 
-    3. If you want to add a building block with a unit, check box (C)
-        and use search field (D) to look for a fitting unit term, e.g.
-        degree Celsius as unit for Parameter \[temperature\].
+3. If you want to add a building block with a unit, check box (C)
+    and use search field (D) to look for a fitting unit term, e.g.
+    degree Celsius as unit for Parameter \[temperature\].
 
-    4. If you could not find a fitting term, you can use the Advanced
-        Term Search with the blue links above the *Add building block*
-        button. If you still could not find a fitting term, use free
-        text input.  
+4. If you could not find a fitting term, you can use the Advanced
+    Term Search with the blue links above the *Add building block*
+    button. If you still could not find a fitting term, use free
+    text input.  
 
-        <img src="media/image16.png" alt="drawing" width="400"/>
+    <img src="media/image16.png" alt="drawing" width="400"/>
 
-    5. For more information on customizing your annotation table click
-        [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
+5. For more information on customizing your annotation table click
+    [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
 
-1. Alternatively, you can also use one of DataPLANT’s [SWATE
-    templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).
-    You can find them under the *Protocol Insert* tab in SWATE.  
+#### Use templates
+
+1. Alternatively, you can also use one of DataPLANT’s [SWATE templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates). You can find them under the *Protocol Insert* tab in SWATE.  
 
     <img src="media/image17.png" alt="drawing" width="400"/>
 
-2. Fill the cells beneath each building block with ontology terms to
-    note the respective *Characteristics, Parameter,* and *Factor*
-    values of your experiment. Using the ontology term search function,
-    you can fill multiple cells at once.
+#### Annotate your samples and data 
 
-    1. When *Use related term directed search* (A) is enabled, SWATE
-        will suggest a selection of suitable terms within the ontology
-        for the column header, e.g. *TripleTOF* *5600* for *instrument
-        model.*
+Fill the cells beneath each building block with ontology terms to note the respective *Characteristics, Parameter,* and *Factor* values of your experiment. Using the ontology term search function, you can fill multiple cells at once. 
 
-    2. When term directed search (A) is disabled, SWATE will still
-        suggest ontology terms, but without relation to the column
-        header.
+1. When *Use related term directed search* (A) is enabled, SWATE
+  will suggest a selection of suitable terms within the ontology
+  for the column header, e.g. *TripleTOF* *5600* for *instrument
+  model.*
 
-    3. If you could not find a fitting term, use free text input.
+2. When term directed search (A) is disabled, SWATE will still
+  suggest ontology terms, but without relation to the column
+  header.
 
-    <img src="media/image18.png" alt="drawing" width="400"/>
-    <img src="media/image19.png" alt="drawing" width="400"/>
+3. If you could not find a fitting term, use free text input.
 
-*More information on how to use SWATE can be found
-[here](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).*
+<img src="media/image18.png" alt="drawing" width="400"/>
+<img src="media/image19.png" alt="drawing" width="400"/>
 
-**In case you need further assistance also visit our
-[Helpdesk](https://support.nfdi4plants.org).**
+> Note: More information on how to use SWATE can be found [here](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).
+
+## DataPLANT Support
+
+For further assistance, feel free to reach out via our [helpdesk](https://support.nfdi4plants.org) or by contacting us <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">directly</a>.
