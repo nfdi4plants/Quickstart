@@ -216,7 +216,7 @@ Briefly:
 
 4. If you could not find a fitting term, you can use the Advanced Term Search with the blue links above the *Add building block* button. If you still could not find a fitting term, use free text input.  
 
-    <img src="media/image16.png" alt="drawing" width="600"/>
+<img src="media/image16.png" alt="drawing" width="600"/>
 
 5. For more information on customizing your annotation table click [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
 
@@ -224,7 +224,7 @@ Briefly:
 
 Alternatively, you can also use one of DataPLANT’s [SWATE templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates). You can find them under the *Protocol Insert* tab in SWATE.  
 
-    <img src="media/image17.png" alt="drawing" width="600"/>
+<img src="media/image17.png" alt="drawing" width="600"/>
 
 #### Annotate your samples and data 
 
@@ -254,14 +254,13 @@ For further assistance, feel free to reach out via our [helpdesk](https://suppor
 
 - [x] You know how to use a command line
 - [x] You have created an ARC before
-- [x] The latest version of the [ARC Commander](https://github.com/nfdi4plants/arcCommander/releases) and its dependencies are installed on your computer
+- [x] The latest version of the [ARC Commander](https://github.com/nfdi4plants/arcCommander/releases) as well as [git](https://git-scm.com/downloads) and [git LFS](https://git-lfs.github.com/) are installed on your computer
 - [x] You have a [DataPLANT](https://register.nfdi4plants.org) account
-- [x] Your computer is linked to the DataHUB via an ssh key or a personal access token.
+- [x] Your computer is linked to the [DataHUB](https://git.nfdi4plants.org) via an ssh key or a personal access token.
 
-Follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB: 
+Voila! You are ready to follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB:
 
-1. Visit the [DataHUB](https://git.nfdi4plants.org), create a new repository and copy the URL to your clipboard.  
-
+1. Visit the [DataHUB](https://git.nfdi4plants.org), create a new repository and copy the URL to your clipboard.
 2. Clone your repository locally `arc get -r git@git.nfdi4plants.org:<YourUserName>/<NameOfRepo.git>` and navigate to it `cd <NameOfRepo>`.
 3. Setup the ARC structure with one study and one assay.
 
