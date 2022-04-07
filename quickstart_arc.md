@@ -94,13 +94,13 @@ The ISA study and ISA assay workbooks allow you to annotate your experimental da
 1. Add an isa.study.xlsx workbook including an identifier to your ARC with
 
 ```bash
-arc s create -s “QuickStartStudy”
+arc s add -s “QuickStartStudy”
 ```
   
 2. Add an isa.assay.xlsx workbook including an identifier to your ARC with
 
 ```bash
-arc a create -s “QuickStartStudy” -a “QuickStartAssay”
+arc a add -s “QuickStartStudy” -a “QuickStartAssay”
 ```
 
 > Note: An assay must be linked to a study. If a study does not exist, it will be created automatically in this step.
@@ -248,3 +248,24 @@ Fill the cells beneath each building block with ontology terms to note the respe
 ## DataPLANT Support
 
 For further assistance, feel free to reach out via our [helpdesk](https://support.nfdi4plants.org) or by contacting us <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">directly</a>.
+
+# The Minimalist's ARC-Quickstarter
+
+- [x] You know how to use a command line
+- [x] You have created an ARC before
+- [x] The latest version of the [ARC Commander](https://github.com/nfdi4plants/arcCommander/releases) and its dependencies are installed on your computer
+- [x] You have a [DataPLANT](https://register.nfdi4plants.org) account
+- [x] Your computer is linked to the DataHUB via an ssh key or a personal access token.
+
+Follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB: 
+
+1. Visit the [DataHUB](https://git.nfdi4plants.org), create a new repository and copy the URL to your clipboard.  
+
+2. Clone your repository locally `arc get -r git@git.nfdi4plants.org:<YourUserName>/<NameOfRepo.git>` and navigate to it `cd <NameOfRepo>`.
+3. Setup the ARC structure with one study and one assay.
+
+```bash
+arc init
+arc i create -i “QuickStartInvestigation”
+arc a create -s “QuickStartStudy” -a “QuickStartAssay”
+```
