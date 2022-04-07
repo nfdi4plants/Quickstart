@@ -268,6 +268,6 @@ Follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB:
 ```bash
 arc init
 arc i create -i “QuickStartInvestigation”
-arc a create -s “QuickStartStudy” -a “QuickStartAssay”
+arc a add -s “QuickStartStudy” -a “QuickStartAssay”
 arc sync -m "initialize ARC structure"
 ```
