@@ -36,13 +36,22 @@ This document is work in progress. If you experience any inconsistencies, have q
 
 - Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: cmd, powershell; Linux and Mac: terminal). The following picture shows exemplarily how to open a powershell on windows by entering *powershell* into the explorer path:  
 
-  <img src="media/02_powershell.png" alt="Windows Powershell" width="600"/>
+  <img src="media/windows_powershell.png" alt="Windows Powershell" width="600"/>
 
 - Text formatted as code blocks represents commands to copy/paste into the command line:
 
 ```bash
 echo "hello - I am a code block"
 ```
+
+- Check if the ARC Commander is functional by displaying the ARC commander version and help menu:
+
+```bash
+arc --version
+arc --help
+```
+
+<img src="media/arcCommander_help.png" alt="ARC Commander Help Menu" width="600"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -55,26 +64,16 @@ mkdir ~/QuickStartARC;
 cd ~/QuickStartARC
 ```
 
-2. Test if the ARC Commander is functional by displaying the ARC commander version and help menu:
-
-```bash
-arc --version
-arc --help
-```
-
-<img src="media/arcCommander_help.png" alt="ARC Commander Help Menu" width="600"/>
-
-3. Initialize your ARC by executing
+2. Initialize your ARC by executing
 
 ```bash
 arc init
 ```
 
-4. This will create the general ARC folder structure:
+3. This will create the general ARC folder structure:
 
 <img src="media/arcCommander_init.png" alt="ARC Commander init" width="600"/>
 <img src="media/arc_rootStructure.png" alt="ARC root structure" width="600"/>
-
 
 <div style="page-break-after: always;"></div>
 
@@ -111,9 +110,7 @@ arc a add -s “QuickStartStudy” -a “QuickStartAssay”
 
 <img src="media/arc_studies_assays.png" alt="ARC studies and assays" width="600"/>
 
-- These steps can be repeated to add as many studies and assays as needed.
-    Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the
-    same StudyIdentifier in the text editor window is used.
+- These steps can be repeated to add as many studies and assays as needed. Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the same StudyIdentifier in the text editor window is used.
 
 3. Place the data for each assay in the respective dataset folder.
 
@@ -143,19 +140,18 @@ ARC Commander synchronization:
 
 1. In the [DataHUB](https://git.nfdi4plants.org), create a new blank repository by clicking "New project/repository" in the plus drop down menu of the navigation bar on top.  
 
-2. Connect your local ARC with the remote specifying the remote address with the flag -r in combination with the URL of your remote repository, e.g.,
+2. Connect your local ARC with the remote specifying the remote address with the flag `-r` in combination with the URL of your remote repository
 
 ```bash
 # Note: This command needs to be adapted with the respective URL of your DataHUB ARC
-# arc sync -r git@git.nfdi4plants.org:<YourUserName>/<NameOfLocalFolder.git>
+# arc sync -r git@git.nfdi4plants.org:<YourUserName>/<YourRepository.git>
 ```
 
 3. Synchronize your ARC with the DataHUB using the command `arc sync`. The ARC Commander will ask for your credentials, where you need to enter your DataHUB handle (displayed on the DataHUB when clicking on your profile picture) and the newly generated access token.
 
 <img src="media/arcCommander_syncRemote.png" alt="ARC Commander Sync Remote" width="600"/>
 
-
-4. If no repository exists under the given URL, the ARC Commander will produce an error ensuring that you spelled the URL correctly**.** Use `arc sync -f` to force synchronization to the specified URL.
+4. If no repository exists under the given URL, the ARC Commander will produce an error ensuring that you spelled the URL correctly. Use `arc sync -f` to force synchronization to the specified URL.
 
 <img src="media/arcCommander_syncForce.png" alt="ARC Commander Sync Force" width="600"/>
 
@@ -163,9 +159,9 @@ ARC Commander synchronization:
   > `git config --global user.name <your_name>`  
   > `git config --global user.email <your_email>`
 
-4. Check if the upload was successful by visiting the respective URL.
+5. Check if the upload was successful by visiting the respective URL.
 
-   <img src="media/datahub_repository.png" alt="DataHUB repository" width="600"/>
+<img src="media/datahub_repository.png" alt="DataHUB repository" width="600"/>
 
 ### Invite collaborators
 
@@ -195,8 +191,8 @@ DataPLANT provides the Excel Add-In SWATE to support you in data annotation.
 
 - Use the *create annotation table* button in the yellow pop-up box (this only appears if you start SWATE on an Excel worksheet without an existing annotation table). An annotation table with the building blocks *Source Name* and *Sample Name* will be generated.  
 
-   <img src="media/swate_createAnnotationTable.png" alt="Swate Create Annotation Table" width="600"/>
-   <img src="media/swate_AnnotationTable.png" alt="Swate Annotation Table" width="600"/>
+<img src="media/swate_createAnnotationTable.png" alt="Swate Create Annotation Table" width="600"/>
+<img src="media/swate_AnnotationTable.png" alt="Swate Annotation Table" width="600"/>
 
 - Annotate your table with help of the [annotation principles](https://nfdi4plants.github.io/AnnotationPrinciples/).  
 Briefly:
@@ -226,9 +222,9 @@ Alternatively, you can also use one of DataPLANT’s [SWATE templates](https://g
 
 <img src="media/swate_templateDatabase.png" alt="Swate Templates" width="600"/>
 
-#### Annotate your samples and data 
+#### Annotate your samples and data
 
-Fill the cells beneath each building block with ontology terms to note the respective *Characteristics, Parameter,* and *Factor* values of your experiment. Using the ontology term search function, you can fill multiple cells at once. 
+Fill the cells beneath each building block with ontology terms to note the respective *Characteristics, Parameter,* and *Factor* values of your experiment. Using the ontology term search function, you can fill multiple cells at once.
 
 1. When *Use related term directed search* (A) is enabled, SWATE
   will suggest a selection of suitable terms within the ontology
@@ -249,6 +245,8 @@ Fill the cells beneath each building block with ontology terms to note the respe
 ## DataPLANT Support
 
 For further assistance, feel free to reach out via our [helpdesk](https://support.nfdi4plants.org) or by contacting us <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">directly</a>.
+
+<div style="page-break-after: always;"></div>
 
 ## The Minimalist's ARC-QuickStart
 
