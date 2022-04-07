@@ -24,6 +24,7 @@ it, please feel free to send a message to: <a href="mailto:info@nfdi4plants.org?
 - [Data annotation](#data-annotation)
   - [SWATE](#swate)
 - [DataPLANT Support](#dataplant-support)
+- [The Minimalist's ARC-QuickStart](#the-minimalists-arc-quickstart)
 
 ## Setup and environment
 
@@ -249,7 +250,7 @@ Fill the cells beneath each building block with ontology terms to note the respe
 
 For further assistance, feel free to reach out via our [helpdesk](https://support.nfdi4plants.org) or by contacting us <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">directly</a>.
 
-# The Minimalist's ARC-Quickstarter
+## The Minimalist's ARC-QuickStart
 
 - [x] You know how to use a command line
 - [x] You have created an ARC before
@@ -268,4 +269,5 @@ Follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB:
 arc init
 arc i create -i “QuickStartInvestigation”
 arc a create -s “QuickStartStudy” -a “QuickStartAssay”
+arc sync -m "initialize ARC structure"
 ```
