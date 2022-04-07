@@ -36,7 +36,7 @@ it, please feel free to send a message to: <a href="mailto:info@nfdi4plants.org?
 
 - Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: cmd, powershell; Linux and Mac: terminal). The following picture shows exemplarily how to open a powershell on windows by entering *powershell* into the explorer path:  
 
-  <img src="media/image2.png" alt="drawing" width="400"/>
+  <img src="media/image2.png" alt="drawing" width="600"/>
 
 - Text formatted as code blocks represents commands to copy/paste into the command line:
 
@@ -62,7 +62,7 @@ arc --version
 arc --help
 ```
 
-<img src="media/image3.png" alt="drawing" width="400"/>
+<img src="media/image3.png" alt="drawing" width="600"/>
 
 3. Initialize your ARC by executing
 
@@ -72,8 +72,8 @@ arc init
 
 4. This will create the general ARC folder structure:
 
-<img src="media/image4.png" alt="drawing" width="400"/>
-<img src="media/image5.png" alt="drawing" width="400"/>
+<img src="media/image4.png" alt="drawing" width="600"/>
+<img src="media/image5.png" alt="drawing" width="600"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -108,7 +108,7 @@ arc a create -s “QuickStartStudy” -a “QuickStartAssay”
 - The ARC Commander will add a subdirectories to the *studies* and *assays* folder. Your ARC should
     look similar to this now:  
 
-<img src="media/image6.png" alt="drawing" width="400"/>
+<img src="media/image6.png" alt="drawing" width="600"/>
 
 - These steps can be repeated to add as many studies and assays as needed.
     Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the
@@ -124,7 +124,7 @@ arc a create -s “QuickStartStudy” -a “QuickStartAssay”
 
 In case you are not a member of DataPLANT yet, please visit <https://register.nfdi4plants.org> to register. Afterwards, you will be granted access to DataPLANT’s DataHUB, available under <https://git.nfdi4plants.org>. The DataHUB allows you to share your ARCs with registered lab or project partners.
 
-<img src="media/image7.png" alt="drawing" width="400"/>
+<img src="media/image7.png" alt="drawing" width="600"/>
 
 After successful registration, please visit the [DataHUB](https://git.nfdi4plants.org) to set an access token for
 ARC Commander synchronization:
@@ -133,61 +133,49 @@ ARC Commander synchronization:
 
 2. Create an api access token with a name of your choice. These tokens grant read and write access to all of your groups and projects. Make sure you save your access token upon successful creation, as this is the only time you will have access to the token (in case you lose the token, you can simply create a new one).
 
-<img src="media/image8.png" alt="drawing" width="400"/>
-<img src="media/image9.png" alt="drawing" width="400"/>
+<img src="media/image8.png" alt="drawing" width="600"/>
+<img src="media/image9.png" alt="drawing" width="600"/>
 
 ### ARC synchronization
 
-1. Open the ARC Commander within your ARC as described above.
-    Synchronize your ARC with the DataHUB using the command `arc
-    sync`. The ARC Commander will ask for your credentials, where you
-    need to enter your DataHUB handle (displayed on the DataHUB when
-    clicking on your profile picture) and the newly generated access
-    token.
+#### Create and connect a remote repository
 
-    1. If you did not connect your local ARC with a remote so far,
-        you can specify the remote address with the flag -r in
-        combination with a URL, e.g.,  
-        `arc sync -r git@git.nfdi4plants.org:brilator/quickstart.git`  
+1. In the [DataHUB](https://git.nfdi4plants.org), create a new blank repository by clicking "New project/repository" in the plus drop down menu of the navigation bar on top.  
 
-       <img src="media/image10.png" alt="drawing" width="400"/>
+2. Connect your local ARC with the remote specifying the remote address with the flag -r in combination with the URL of your remote repository, e.g.,
 
-    2. In case you want to create a new remote repository at this
-        URL, it needs to be assembled like the following example:  
-        <https://git.nfdi4plants.org/>*YourUserName*/*NameOfLocalFolder*
+```bash
+# Note: This command needs to be adapted with the respective URL of your DataHUB ARC
+# arc sync -r git@git.nfdi4plants.org:<YourUserName>/<NameOfLocalFolder.git>
+```
 
-        If no repository exists under the given URL, the ARC Commander
-        will produce an error ensuring that you spelled the URL
-        correctly**.** Use `arc sync -f` to force synchronization to
-        the specified URL.
+3. Synchronize your ARC with the DataHUB using the command `arc sync`. The ARC Commander will ask for your credentials, where you need to enter your DataHUB handle (displayed on the DataHUB when clicking on your profile picture) and the newly generated access token.
 
-        <img src="media/image11.png" alt="drawing" width="400"/>
+<img src="media/image10.png" alt="drawing" width="600"/>
 
-> Note: In case you did not set your git user name and email
-    address you might get a warning to do so. These are needed for
-    displaying them on the git commits. You can update the settings with
-    the following commands:
-    `git config --global user.name <your_name>`  
-    `git config --global user.email <your_email>`
 
-2. Check if the upload was successful by visiting the respective URL.
+4. If no repository exists under the given URL, the ARC Commander will produce an error ensuring that you spelled the URL correctly**.** Use `arc sync -f` to force synchronization to the specified URL.
 
-   <img src="media/image12.png" alt="drawing" width="400"/>
+<img src="media/image11.png" alt="drawing" width="600"/>
+
+  > Note: In case you did not set your git user name and email address you might get a warning to do so. These are needed for displaying them on the git commits. You can update the settings with  
+  > `git config --global user.name <your_name>`  
+  > `git config --global user.email <your_email>`
+
+4. Check if the upload was successful by visiting the respective URL.
+
+   <img src="media/image12.png" alt="drawing" width="600"/>
 
 ### Invite collaborators
 
-1. You can invite lab-colleagues or project partners to join your ARC
-    for collaborative work. While inside your ARC on the DataHUB, click
-    on *Project information -\> Members* in the left navigation panel.
-    Search for registered researchers and select a role for each
-    individually. These roles come along with different rights. In
-    short:  
-    - *Guest:* Have the least rights. This is recommended for people you ask for consultancy.
-    - *Developer:* The choice for most people you want to invite to your ARC. Developers have read and write access, but cannot maintain the project on the DataHUB, e.g. inviting others.  
-    - *Maintainer:* Gives the person the same rights as you have (except of removing you from your own project). This is recommended for inviting PIs or group leaders allowing them to add their group
-    members for data upload or analysis to the project as well.
+You can invite lab-colleagues or project partners to join your ARC for collaboration. While inside your ARC on the DataHUB, click on *Project information -\> Members* in the left navigation panel. Search for registered researchers and select a role for each individually. These roles come along with different rights.  
+Briefly:
 
-    <img src="media/image13.png" alt="drawing" width="400"/>
+- *Guests:* Have the least rights. This is recommended for people you ask for consultancy.
+- *Developers:* The choice for most people you want to invite to your ARC. Developers have read and write access, but cannot maintain the project on the DataHUB, e.g. inviting others.  
+- *Maintainers:* Gives the person the same rights as you have (except of removing you from your own project). This is recommended for inviting PIs or group leaders allowing them to add their group members for data upload or analysis to the project as well.
+
+<img src="media/image13.png" alt="drawing" width="600"/>
 
 > Note: A detailed usage instruction for the ARC Commander can be found [here](https://github.com/nfdi4plants/arcCommander/wiki/Detailed-usage-instruction).
 
@@ -206,49 +194,36 @@ DataPLANT provides the Excel Add-In SWATE to support you in data annotation.
 
 - Use the *create annotation table* button in the yellow pop-up box (this only appears if you start SWATE on an Excel worksheet without an existing annotation table). An annotation table with the building blocks *Source Name* and *Sample Name* will be generated.  
 
-   <img src="media/image14.png" alt="drawing" width="400"/>
-   <img src="media/image15.png" alt="drawing" width="400"/>
+   <img src="media/image14.png" alt="drawing" width="600"/>
+   <img src="media/image15.png" alt="drawing" width="600"/>
 
-- Annotate your table with help of the [annotation principles](https://nfdi4plants.github.io/AnnotationPrinciples/). In short, *Characteristics* are used for study descriptions and describe inherent properties of the source material (e.g. a certain strain). *Parameters* describe steps in your experimental workflow (e.g. an instrument model or a growth chamber), and *Factors* describe independent variables that result in a specific output (e.g. the light intensity).
+- Annotate your table with help of the [annotation principles](https://nfdi4plants.github.io/AnnotationPrinciples/).  
+Briefly:
+  - *Characteristics* are used for study descriptions and describe inherent properties of the source material (e.g. a certain strain).  
+  - *Parameters* describe steps in your experimental workflow (e.g. an instrument model or a growth chamber), and  
+  - *Factors* describe independent variables that result in a specific output (e.g. the light intensity).
 
-- The combination of ISA (Characteristics, Parameter, Factor) and
-        a biological or technological ontology (e.g. temperature,
-        strain, instrument model) gives the flexibility to display an
-        ontology term, e.g. temperature, as a regular process parameter
-        or as the factor your study is based on (Parameter
-        \[temperature\] or Factor \[temperature\]).
+- The combination of ISA (Characteristics, Parameter, Factor) and a biological or technological ontology (e.g. temperature, strain, instrument model) gives the flexibility to display an ontology term, e.g. temperature, as a regular process parameter or as the factor your study is based on (Parameter \[temperature\] or Factor \[temperature\]).
 
-#### Customize your table by adding building blocks:  
+#### Customize your table by adding building blocks
 
 1. Choose the type of building block you want to add (A).
 
-2. If you chose a descriptive building block type (building blocks
-    besides Sample Name, Source Name, and Data File Name), use
-    search field (B) to search for an Ontology Term. SWATE accesses
-    the SwateDB with a list of established external ontologies
-    designated suitable for use in plant science. In addition, we
-    feature our own ontology NFDI4PSO to extend the DB with missing,
-    but necessary terms.
+2. If you chose a descriptive building block type (building blocks besides Sample Name, Source Name, and Data File Name), use search field (B) to search for an Ontology Term. SWATE accesses the SwateDB with a list of established external ontologies designated suitable for use in plant science. In addition, we feature our own ontology NFDI4PSO to extend the DB with missing, but necessary terms.
 
-3. If you want to add a building block with a unit, check box (C)
-    and use search field (D) to look for a fitting unit term, e.g.
-    degree Celsius as unit for Parameter \[temperature\].
+3. If you want to add a building block with a unit, check box (C) and use search field (D) to look for a fitting unit term, e.g. degree Celsius as unit for Parameter \[temperature\].
 
-4. If you could not find a fitting term, you can use the Advanced
-    Term Search with the blue links above the *Add building block*
-    button. If you still could not find a fitting term, use free
-    text input.  
+4. If you could not find a fitting term, you can use the Advanced Term Search with the blue links above the *Add building block* button. If you still could not find a fitting term, use free text input.  
 
-    <img src="media/image16.png" alt="drawing" width="400"/>
+    <img src="media/image16.png" alt="drawing" width="600"/>
 
-5. For more information on customizing your annotation table click
-    [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
+5. For more information on customizing your annotation table click [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
 
 #### Use templates
 
-1. Alternatively, you can also use one of DataPLANT’s [SWATE templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates). You can find them under the *Protocol Insert* tab in SWATE.  
+Alternatively, you can also use one of DataPLANT’s [SWATE templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates). You can find them under the *Protocol Insert* tab in SWATE.  
 
-    <img src="media/image17.png" alt="drawing" width="400"/>
+    <img src="media/image17.png" alt="drawing" width="600"/>
 
 #### Annotate your samples and data 
 
@@ -265,8 +240,8 @@ Fill the cells beneath each building block with ontology terms to note the respe
 
 3. If you could not find a fitting term, use free text input.
 
-<img src="media/image18.png" alt="drawing" width="400"/>
-<img src="media/image19.png" alt="drawing" width="400"/>
+<img src="media/image18.png" alt="drawing" width="600"/>
+<img src="media/image19.png" alt="drawing" width="600"/>
 
 > Note: More information on how to use SWATE can be found [here](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).
 
