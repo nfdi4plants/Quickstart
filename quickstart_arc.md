@@ -57,9 +57,9 @@ command line.
 
 The ISA investigation workbook allows you to record administrative metadata of your project. The command `arc i create -i <your_investigation_identifier>` adds the isa.investigation.xlsx workbook including an identifier to your ARC.
 
-    ```bash
-    arc i create -i “quickStart_investigation”
-    ```
+  ```bash
+  arc i create -i “quickStart_investigation”
+  ```
 
 ### Adding ISA studies and assays
 
