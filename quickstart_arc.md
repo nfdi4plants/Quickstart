@@ -4,9 +4,7 @@
 
 > V1.1, 2022
 
-We are very happy that you chose our tools and infrastructure to create
-and share your own ARCs. In this QuickStart we focus on how to use the
-ARC Commander and SWATE to store your data and enrich it with metadata.
+We are very happy that you chose our tools and infrastructure to create and share your own ARCs. In this QuickStart we focus on how to use the ARC Commander and SWATE to store your data and enrich it with metadata.
 
 This document is work in progress: If you experience any
 inconsistencies, have questions or would like to suggest additions to
