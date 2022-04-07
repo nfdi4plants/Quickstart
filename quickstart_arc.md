@@ -1,4 +1,4 @@
-![](media/image1.png)
+<img src="media/image1.png" alt="drawing" width="400"/>
 
 # DataPLANT’s QuickStart on ARCs
 > V1.1, 2022
@@ -13,7 +13,7 @@ it, please feel free to send a message to: info@nfdi4plants.org.
 
 - [Setup and environment](#setup-and-environment)
   - [Required softwares](#required-softwares)
-  - [The terminal](#the-terminal)
+  - [The command line](#the-command-line)
 - [ARC initialization](#arc-initialization)
 - [Adding metadata](#adding-metadata)
   - [ISA investigation](#isa-investigation)
@@ -31,25 +31,35 @@ it, please feel free to send a message to: info@nfdi4plants.org.
 - [ ] Please download the newest version for your operating system [here](https://github.com/nfdi4plants/arcCommander/releases) and install it according to [these instructions](https://github.com/nfdi4plants/arcCommander#install-and-start).
 - [ ] Prerequisites for using the ARC Commander are [git](https://git-scm.com/downloads) and [git LFS](https://git-lfs.github.com/)
 
-### The terminal
+### The command line
 
-Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: cmd, powershell; Linux and Mac: terminal). The following picture shows exemplary how to open a powershell on windows in the designated ARC folder by entering *powershell* into the explorer path: ![powershell](media/image2.png).
+Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: cmd, powershell; Linux and Mac: terminal). The following picture shows exemplary how to open a powershell on windows in the designated ARC folder by entering *powershell* into the explorer path:
 
-- [ ] Text formatted `like this` represents commands to copy/paste into the
-command line.
+<img src="media/image2.png" alt="drawing" width="400"/>
+
+Text formatted as code blocks represents commands to copy/paste into the command line:
+
+  ```bash
+  echo "hello - I am a code block"
+  ```
 
 ## ARC initialization
 
 1. Head over to your local folder in which you want to initialize an ARC.
 
 1. To test if the ARC Commander is functional, run the command `arc`,
-    displaying a list of options:  
-    ![](media/image3.png)
+    displaying a list of options:
+    
+    <img src="media/image3.png" alt="drawing" width="400"/>
 
-1. Initialize your ARC by executing the command `arc init`. This will
-    create the general ARC folder structure: ![Graphical user interface,
-    application ](media/image4.png)  
-    ![](media/image5.png)
+1. Initialize your ARC by executing the command `arc init`
+
+
+2. This will create the general ARC folder structure:
+
+    <img src="media/image4.png" alt="drawing" width="400"/>
+    <img src="media/image5.png" alt="drawing" width="400"/>
+
 
 ## Adding metadata
 
@@ -69,14 +79,15 @@ The ISA study and ISA assay workbooks allow you to annotate your experimental da
 
 #### ISA assay
 
-Use the command `arc a add -a ` to add the isa.study.xlsx and isa.assay.xlsx. Again, a text editor will open. Here you need to enter an
+Use the command `arc a add -a` to add the isa.study.xlsx and isa.assay.xlsx. Again, a text editor will open. Here you need to enter an
     identifier for your ISA study, e.g. “QuickStartStudy”, and an
     identifier for your ISA assay, e.g. “QuickStartAssay”. 
     
-    After you
-    closed and saved the input, the ARC Commander will add
+1. After you     closed and saved the input, the ARC Commander will add
     subdirectories to the *studies* and *assays* folder. Your ARC should
-    look similar to this now: ![](media/image6.png)
+    look similar to this now: 
+    
+    <img src="media/image6.png" alt="drawing" width="400"/>
 
 1. Step number 4 can be repeated to add as many assays as needed.
     Accordingly, more subdirectories in addition to “QuickStartAssay”
@@ -88,11 +99,13 @@ Use the command `arc a add -a ` to add the isa.study.xlsx and isa.assay.xlsx. Ag
 
 ### DataPLANT registration and access
 
-> In case you are not a member of DataPLANT yet, please visit
+In case you are not a member of DataPLANT yet, please visit
 <https://register.nfdi4plants.org> to register. Afterwards, you will be
 granted access to DataPLANT’s DataHUB, available under
 <https://git.nfdi4plants.org>, to share your ARCs with lab or project
-partners. ![](media/image7.png).
+partners.
+
+<img src="media/image7.png" alt="drawing" width="400"/>
 
 1. After successful registration, please visit the
     [DataHUB](https://git.nfdi4plants.org) to set an access token for
@@ -109,7 +122,8 @@ partners. ![](media/image7.png).
      token (in case you lose the token, you can simply create a new
      one).
 
-> ![](media/image8.png)![](media/image9.png)
+<img src="media/image8.png" alt="drawing" width="400"/>
+<img src="media/image9.png" alt="drawing" width="400"/>
 
 ### ARC synchronization
 
@@ -125,8 +139,8 @@ partners. ![](media/image7.png).
         combination with a URL, e.g.,  
         `arc sync -r
         https://git.nfdi4plants.org/martinkuhl/QuickStart`  
-        ![Graphical user interface, text, application Description
-        automatically generated](media/image10.png)
+       
+       <img src="media/image10.png" alt="drawing" width="400"/>
 
     1. In case you want to create a new remote repository at this
         URL, it needs to be assembled like the following example:  
@@ -135,8 +149,9 @@ partners. ![](media/image7.png).
         If no repository exists under the given URL, the ARC Commander
         will produce an error ensuring that you spelled the URL
         correctly**.** Use `arc sync -f` to force synchronization to
-        the specified URL. ![Text Description automatically
-        generated](media/image11.png)
+        the specified URL.
+        
+        <img src="media/image11.png" alt="drawing" width="400"/>
 
 > Note: In case you did not set your git user name and email
     address you might get a warning to do so. These are needed for
@@ -146,6 +161,13 @@ partners. ![](media/image7.png).
     `git config --global user.email <your_email>`
 
 1. Check if the upload was successful by visiting the respective URL.
+   
+   <img src="media/image12.png" alt="drawing" width="400"/>
+
+
+
+
+
 
 ### Invite collaborators
 
@@ -164,7 +186,7 @@ partners. ![](media/image7.png).
     of removing you from your own project). This is recommended for
     inviting PIs or group leaders allowing them to add their group
     members for data upload or analysis to the project as well.  
-    ![A screenshot of a computer](media/image13.png)
+    <img src="media/image13.png" alt="drawing" width="400"/>
 
 > Note: A detailed usage instruction for the ARC Commander can be found
 > [here](https://github.com/nfdi4plants/arcCommander/wiki/Detailed-usage-instruction).
@@ -187,9 +209,9 @@ partners. ![](media/image7.png).
     (this only appears if you start SWATE on an Excel worksheet without
     an existing annotation table). An annotation table with the building
     blocks *Source Name* and *Sample Name* will be generated.  
-    ![Graphical user interface, text, application, Excel Description
-    automatically generated](media/image14.jpeg)![Graphical user
-    interface, application, table, Excel](media/image15.png)
+   
+   <img src="media/image14.png" alt="drawing" width="400"/>
+   <img src="media/image15.png" alt="drawing" width="400"/>
 
 3. Annotate your table with help of the [annotation
     principles](https://nfdi4plants.github.io/AnnotationPrinciples/). In
@@ -227,8 +249,8 @@ partners. ![](media/image7.png).
         Term Search with the blue links above the *Add building block*
         button. If you still could not find a fitting term, use free
         text input.  
-        ![Graphical user interface, application Description
-        automatically generated](media/image16.jpeg)
+        
+        <img src="media/image16.png" alt="drawing" width="400"/>
 
     6. For more information on customizing your annotation table click
         [here](https://github.com/nfdi4plants/Swate/wiki/Docs03-Building-Blocks).
@@ -236,8 +258,8 @@ partners. ![](media/image7.png).
 5. Alternatively, you can also use one of DataPLANT’s [SWATE
     templates](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).
     You can find them under the *Protocol Insert* tab in SWATE.  
-    ![Graphical user interface, text, application Description
-    automatically generated](media/image17.png)
+    
+    <img src="media/image17.png" alt="drawing" width="400"/>
 
 6. Fill the cells beneath each building block with ontology terms to
     note the respective *Characteristics, Parameter,* and *Factor*
@@ -255,10 +277,8 @@ partners. ![](media/image7.png).
 
     9. If you could not find a fitting term, use free text input.
 
-> ![Graphical user interface, text, application Description
-> automatically generated](media/image18.jpeg) ![Graphical user
-> interface, text, application Description automatically
-> generated](media/image19.png)
+    <img src="media/image18.png" alt="drawing" width="400"/>
+    <img src="media/image19.png" alt="drawing" width="400"/>
 
 *More information on how to use SWATE can be found
 [here](https://github.com/nfdi4plants/Swate/wiki/Docs05-Templates).*
