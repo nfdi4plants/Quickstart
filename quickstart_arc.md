@@ -261,12 +261,18 @@ For further assistance, feel free to reach out via our [helpdesk](https://suppor
 Voila! You are ready to follow these few steps to create a minimal ARC sharable via DataPLANT's DataHUB:
 
 1. Visit the [DataHUB](https://git.nfdi4plants.org), create a new repository and copy the URL to your clipboard.
-2. Clone your repository locally `arc get -r git@git.nfdi4plants.org:<YourUserName>/<NameOfRepo.git>` and navigate to it `cd <NameOfRepo>`.
-3. Setup the ARC structure with one study and one assay.
+2. Replace the `<variables>` in the following code block with your information and execute it in your command line.
 
 ```bash
+# Clone your repository locally
+arc get -r git@git.nfdi4plants.org:<YourUserName>/<YourRepository.git>
+
+# navigate to the cloned repository
+cd <YourRepository>
+
+# Setup the ARC structure with one study and one assay
 arc init
-arc i create -i “QuickStartInvestigation”
-arc a add -s “QuickStartStudy” -a “QuickStartAssay”
+arc i create -i "<YourInvestigation>"
+arc a add -s "<YourStudy>" -a "<YourAssay>"
 arc sync -m "initialize ARC structure"
 ```
