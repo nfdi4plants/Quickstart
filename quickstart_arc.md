@@ -15,7 +15,8 @@ it, please feel free to send a message to: info@nfdi4plants.org.
   - [Required softwares](#required-softwares)
   - [The terminal](#the-terminal)
 - [ARC initialization](#arc-initialization)
-  - [Adding an ISA investigation](#adding-an-isa-investigation)
+- [Adding metadata](#adding-metadata)
+  - [ISA investigation](#isa-investigation)
   - [Adding ISA studies and assays](#adding-isa-studies-and-assays)
 - [Sharing your ARC](#sharing-your-arc)
   - [DataPLANT registration and access](#dataplant-registration-and-access)
@@ -50,21 +51,29 @@ command line.
     application ](media/image4.png)  
     ![](media/image5.png)
 
-### Adding an ISA investigation
+## Adding metadata
 
-1. Add the ISA investigation sheet, allowing you to record
-    administrative metadata of your project, with the command `arc i
-    create`. This will open a text editor, where you need to enter an
-    identifier, e.g. “20220302\_QuickStart” and a title for your
-    investigation sheet. Close the editor window and save the input.
+### ISA investigation
+
+The ISA investigation workbook allows you to record administrative metadata of your project. The command `arc i create -i <your_investigation_identifier>` adds the isa.investigation.xlsx workbook including an identifier to your ARC.
+
+    ```bash
+    arc i create -i “quickStart_investigation”
+    ```
 
 ### Adding ISA studies and assays
 
-1. The isa.assay.xlsx workbook enables you to annotate your
-    experimental data. To add the isa.assay.xlsx, use the command `arc
-    a add`. Again, a text editor will open. Here you need to enter an
+The ISA study and ISA assay workbooks allow you to annotate your experimental data. 
+
+#### ISA study
+
+#### ISA assay
+
+Use the command `arc a add -a ` to add the isa.study.xlsx and isa.assay.xlsx. Again, a text editor will open. Here you need to enter an
     identifier for your ISA study, e.g. “QuickStartStudy”, and an
-    identifier for your ISA assay, e.g. “QuickStartAssay”. After you
+    identifier for your ISA assay, e.g. “QuickStartAssay”. 
+    
+    After you
     closed and saved the input, the ARC Commander will add
     subdirectories to the *studies* and *assays* folder. Your ARC should
     look similar to this now: ![](media/image6.png)
