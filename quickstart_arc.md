@@ -72,7 +72,7 @@ arc init
 
 3. This will create the general ARC folder structure:
 
-<img src="media/arcCommander_init.gif" alt="ARC Commander init" width="800"/>
+<img src="media/arcCommander_init.gif" alt="ARC Commander init" width="1200"/>
 <img src="media/arc_rootStructure.png" alt="ARC root structure" width="600"/>
 
 <div style="page-break-after: always;"></div>
