@@ -18,7 +18,7 @@ it, please feel free to send a message to: info@nfdi4plants.org.
 - [ARC initialization](#arc-initialization)
 - [Adding metadata](#adding-metadata)
   - [ISA investigation](#isa-investigation)
-  - [Adding ISA studies and assays](#adding-isa-studies-and-assays)
+  - [ISA studies and assays](#isa-studies-and-assays)
 - [Sharing your ARC](#sharing-your-arc)
   - [DataPLANT registration and access](#dataplant-registration-and-access)
   - [ARC synchronization](#arc-synchronization)
@@ -51,10 +51,10 @@ echo "hello - I am a code block"
 
 1. Create and navigate to a local folder, which you want to initialize as an ARC.
 
-  ```bash
-  mkdir ~/QuickStartARC; 
-  cd ~/QuickStartARC
-  ```
+```bash
+mkdir ~/QuickStartARC; 
+cd ~/QuickStartARC
+```
 
 1. Test if the ARC Commander is functional by displaying the ARC commander version and help menu:
 
@@ -88,21 +88,17 @@ The ISA investigation workbook allows you to record administrative metadata of y
   arc i create -i “QuickStartInvestigation”
   ```
 
-### Adding ISA studies and assays
+### ISA studies and assays
 
 The ISA study and ISA assay workbooks allow you to annotate your experimental data.
 
-#### ISA study
-
-Add an isa.study.xlsx workbook including an identifier to your ARC with
+1. Add an isa.study.xlsx workbook including an identifier to your ARC with
 
   ```bash
   arc s create -s “QuickStartStudy”
   ```
-
-#### ISA assay
-
-Add an isa.assay.xlsx workbook including an identifier to your ARC with
+  
+2. Add an isa.assay.xlsx workbook including an identifier to your ARC with
 
   ```bash
   arc a create -s “QuickStartStudy” -a “QuickStartAssay”
@@ -141,7 +137,6 @@ ARC Commander synchronization:
 
 <img src="media/image8.png" alt="drawing" width="400"/>
 <img src="media/image9.png" alt="drawing" width="400"/>
-
 
 ### ARC synchronization
 
@@ -215,7 +210,8 @@ Your ARC should now contain one isa.investigation.xlsx and one or
 
 ### SWATE
 
-DataPLANT provides the Excel Add-In SWATE to support you in data annotation. 
+DataPLANT provides the Excel Add-In SWATE to support you in data annotation.
+
 - [ ] Download and install the newest SWATE version according to [these instructions](https://github.com/nfdi4plants/Swate/wiki/docs01-installing-Swate#desktop-installation).
 - [ ] In case you use an Excel version older than Excel 2019, please install [SWATE for Excel online](https://github.com/nfdi4plants/Swate/wiki/docs01-installing-Swate#quickstart).
 
