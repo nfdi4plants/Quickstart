@@ -60,8 +60,8 @@ arc --help
 1. Create and navigate to a local folder, which you want to initialize as an ARC.
 
 ```bash
-mkdir ~/QuickStartARC; 
-cd ~/QuickStartARC
+mkdir ~/Desktop/QuickStartARC; 
+cd ~/Desktop/QuickStartARC
 ```
 
 2. Initialize your ARC by executing
