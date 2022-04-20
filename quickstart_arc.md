@@ -2,16 +2,16 @@
 
 # DataPLANT’s QuickStart on ARCs
 
-> V1.1  
+> V1.2
 > April 2022
 
 We are very happy that you chose our tools and infrastructure to create and share your own ARCs. In this QuickStart we focus on how to use the "ARC Commander" to store your data and "SWATE" to enrich it with metadata.
 
 This document is work in progress. If you experience any inconsistencies, have questions or would like to suggest additions, please feel free to send a message to: <a href="mailto:info@nfdi4plants.org?subject=ARC%20QuickStart">info[at]nfdi4plants.org</a> or open in issue at <https://github.com/nfdi4plants/quickstart>.
 
-- [Setup and environment](#setup-and-environment)
-  - [Required softwares](#required-softwares)
+- [Environment and setup](#environment-and-setup)
   - [The command line](#the-command-line)
+  - [Required softwares](#required-softwares)
 - [ARC initialization](#arc-initialization)
 - [Adding metadata](#adding-metadata)
   - [ISA investigation](#isa-investigation)
@@ -19,22 +19,22 @@ This document is work in progress. If you experience any inconsistencies, have q
 - [Sharing your ARC](#sharing-your-arc)
   - [DataPLANT registration and access](#dataplant-registration-and-access)
   - [ARC synchronization](#arc-synchronization)
+    - [Create and connect a remote repository](#create-and-connect-a-remote-repository)
   - [Invite collaborators](#invite-collaborators)
 - [Data annotation](#data-annotation)
   - [SWATE](#swate)
+    - [Customize your table by adding building blocks](#customize-your-table-by-adding-building-blocks)
+    - [Use templates](#use-templates)
+    - [Annotate your samples and data](#annotate-your-samples-and-data)
 - [DataPLANT Support](#dataplant-support)
 - [The Minimalist's ARC-QuickStart](#the-minimalists-arc-quickstart)
 
-## Setup and environment
-
-### Required softwares
-
-- [ ] Please download the latest version of the [ARC Commander](https://github.com/nfdi4plants/arcCommander/releases) for your operating system and install it according to [these instructions](https://github.com/nfdi4plants/arcCommander#install-and-start).
-- [ ] Prerequisites for using the ARC Commander are [git](https://git-scm.com/downloads) and [git LFS](https://git-lfs.github.com/)
+## Environment and setup
 
 ### The command line
 
-- Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: cmd, powershell; Linux and Mac: terminal). The following picture shows exemplarily how to open a powershell on windows by entering *powershell* into the explorer path:  
+- Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: powershell; Linux and Mac: terminal).
+- The following picture shows exemplarily how to open a powershell on windows by entering *powershell* into the explorer path:  
 
   <img src="media/windows_powershell.png" alt="Windows Powershell" width="600"/>
 
@@ -43,6 +43,19 @@ This document is work in progress. If you experience any inconsistencies, have q
 ```bash
 echo "hello - I am a code block"
 ```
+
+### Required softwares
+
+- [ ] Prerequisites for using the ARC Commander are [git](https://git-scm.com/downloads) and [git LFS](https://git-lfs.github.com/)
+
+> Note: If this is your first time using git on this computer, you need to set your git user name and email address. These are needed for displaying them on the git commits. You can update the settings with
+
+  ```bash
+  git config --global user.name <your_name>
+  git config --global user.email <your_email>
+  ```
+
+- [ ] Please download the latest version of the [ARC Commander](https://github.com/nfdi4plants/arcCommander/releases) for your operating system and install it according to [these instructions](https://github.com/nfdi4plants/arcCommander#install-and-start).
 
 - Check if the ARC Commander is functional by displaying the ARC commander version and help menu:
 
@@ -155,11 +168,7 @@ ARC Commander synchronization:
 
 <img src="media/arcCommander_syncForce.png" alt="ARC Commander Sync Force" width="600"/>
 
-  > Note: In case you did not set your git user name and email address you might get a warning to do so. These are needed for displaying them on the git commits. You can update the settings with  
-  > `git config --global user.name <your_name>`  
-  > `git config --global user.email <your_email>`
-
-5. Check if the upload was successful by visiting the respective URL.
+5. Check if the upload was successful by visiting your ARC at the respective URL in your browser.
 
 <img src="media/datahub_repository.png" alt="DataHUB repository" width="600"/>
 
@@ -272,4 +281,3 @@ arc i create -i <YourInvestigation>
 arc a add -s <YourStudy> -a <YourAssay>
 arc sync -f -r https://git.nfdi4plants.org/<YourUserName>/<YourARC> -m "initialize ARC structure"
 ```
-
