@@ -144,7 +144,7 @@ ARC Commander synchronization:
 
 ```bash
 # Note: This command needs to be adapted with the respective URL of your DataHUB ARC
-# arc sync -r git@git.nfdi4plants.org:<YourUserName>/<YourRepository.git>
+# arc sync -r https://git.nfdi4plants.org/<YourUserName>/<YourARC>
 ```
 
 3. Synchronize your ARC with the DataHUB using the command `arc sync`. The ARC Commander will ask for your credentials, where you need to enter your DataHUB handle (displayed on the DataHUB when clicking on your profile picture) and the newly generated access token.
@@ -262,15 +262,14 @@ Voila! You are ready to follow these few steps to create a minimal ARC sharable 
 2. Replace the `<variables>` in the following code block with your information and execute it in your command line.
 
 ```bash
-# Clone your repository locally
-arc get -r git@git.nfdi4plants.org:<YourUserName>/<YourRepository.git>
-
-# navigate to the cloned repository
-cd <YourRepository>
+# Create and navigate to your ARC folder
+mkdir <YourARC>
+cd <YourARC>
 
 # Setup the ARC structure with one study and one assay
 arc init
-arc i create -i "<YourInvestigation>"
-arc a add -s "<YourStudy>" -a "<YourAssay>"
-arc sync -m "initialize ARC structure"
+arc i create -i <YourInvestigation>
+arc a add -s <YourStudy> -a <YourAssay>
+arc sync -f -r https://git.nfdi4plants.org/<YourUserName>/<YourARC> -m "initialize ARC structure"
 ```
+
