@@ -2,8 +2,8 @@
 
 # DataPLANT’s QuickStart on ARCs
 
-> V1.2
-> April 2022
+> V1.3
+> May 2022
 
 We are very happy that you chose our tools and infrastructure to create and share your own ARCs. In this QuickStart we focus on how to use the "ARC Commander" to store your data and "SWATE" to enrich it with metadata.
 
@@ -11,7 +11,7 @@ This document is work in progress. If you experience any inconsistencies, have q
 
 - [Environment and setup](#environment-and-setup)
   - [The command line](#the-command-line)
-  - [Required softwares](#required-softwares)
+  - [Required software](#required-software)
 - [ARC initialization](#arc-initialization)
 - [Adding metadata](#adding-metadata)
   - [ISA investigation](#isa-investigation)
@@ -19,7 +19,7 @@ This document is work in progress. If you experience any inconsistencies, have q
 - [Sharing your ARC](#sharing-your-arc)
   - [DataPLANT registration and access](#dataplant-registration-and-access)
   - [ARC synchronization](#arc-synchronization)
-    - [Create and connect a remote repository](#create-and-connect-a-remote-repository)
+    - [Setting a git user](#setting-a-git-user)
   - [Invite collaborators](#invite-collaborators)
 - [Data annotation](#data-annotation)
   - [SWATE](#swate)
@@ -33,10 +33,10 @@ This document is work in progress. If you experience any inconsistencies, have q
 
 ### The command line
 
-- Most of this quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: powershell; Linux and Mac: terminal).
+- Most of this Quickstart (especially the section [ARC initialization](#arc-initialization)) is based on the command line (Windows: powershell; Linux and Mac: terminal).
 - The following picture shows exemplarily how to open a powershell on windows by entering *powershell* into the explorer path:  
 
-  <img src="media/windows_powershell.png" alt="Windows Powershell" width="600"/>
+  <img src="media/windows_powershell1.png" alt="Windows Powershell" width="600"/>
 
 - Text formatted as code blocks represents commands to copy/paste into the command line:
 
@@ -44,7 +44,7 @@ This document is work in progress. If you experience any inconsistencies, have q
 echo "hello - I am a code block"
 ```
 
-### Required softwares
+### Required software
 
 - [ ] Prerequisites for using the ARC Commander are [git](https://git-scm.com/downloads) and [git LFS](https://git-lfs.github.com/)
 
@@ -64,7 +64,7 @@ arc --version
 arc --help
 ```
 
-<img src="media/arcCommander_help.png" alt="ARC Commander Help Menu" width="600"/>
+<img src="media/arcCommander_help1.png" alt="ARC Commander Help Menu" width="600"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -73,8 +73,8 @@ arc --help
 1. Create and navigate to a local folder, which you want to initialize as an ARC.
 
 ```bash
-mkdir ~/Desktop/QuickStartARC; 
-cd ~/Desktop/QuickStartARC
+mkdir ~/Desktop/QuickStart; 
+cd ~/Desktop/QuickStart
 ```
 
 2. Initialize your ARC by executing
@@ -85,8 +85,7 @@ arc init
 
 3. This will create the general ARC folder structure:
 
-<img src="media/arcCommander_init.png" alt="ARC Commander init" width="600"/>
-<img src="media/arc_rootStructure.png" alt="ARC root structure" width="600"/>
+<img src="media/arcCommander_init1.png" alt="ARC Commander init" width="600"/>
 
 <div style="page-break-after: always;"></div>
 
@@ -94,7 +93,7 @@ arc init
 
 ### ISA investigation
 
-The ISA investigation workbook allows you to record administrative metadata of your project. Add the isa.investigation.xlsx workbook including an identifier to your ARC with
+The ISA investigation (`-i`) workbook allows you to record administrative metadata of your project. Add the isa.investigation.xlsx workbook including an identifier to your ARC with
 
 ```bash
 arc i create -i QuickStartInvestigation
@@ -102,7 +101,7 @@ arc i create -i QuickStartInvestigation
 
 ### ISA studies and assays
 
-The ISA study and ISA assay workbooks allow you to annotate your experimental data.
+The ISA study (`-s`) and ISA assay (`-a`) workbooks allow you to annotate your experimental data.
 
 1. Add an isa.study.xlsx workbook including an identifier to your ARC with
 
@@ -121,9 +120,9 @@ arc a add -s QuickStartStudy -a QuickStartAssay
 - The ARC Commander will add a subdirectories to the *studies* and *assays* folder. Your ARC should
     look similar to this now:  
 
-<img src="media/arc_studies_assays.png" alt="ARC studies and assays" width="600"/>
+<img src="media/arc_studies_assays.jpg" alt="ARC studies and assays" width="600"/>
 
-- These steps can be repeated to add as many studies and assays as needed. Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the same StudyIdentifier in the text editor window is used.
+- These steps can be repeated to add as many studies and assays as needed. Accordingly, more subdirectories will be added. Multiple assays can be grouped in a study when the same StudyIdentifier is used.
 
 3. Place the data for each assay in the respective dataset folder.
 
@@ -137,40 +136,62 @@ In case you are not a member of DataPLANT yet, please visit <https://register.nf
 
 <img src="media/dataplant_registration.png" alt="DataPLANT registration" width="600"/>
 
-After successful registration, please visit the [DataHUB](https://git.nfdi4plants.org) to set an access token for
-ARC Commander synchronization:
+After successful registration, create and set an access token for ARC Commander synchronization using
 
-1. Sign-in in the top right corner. Click on your profile picture in the top right corner and go to *Preferences -\> Access Tokens.*
+```bash
+arc remote accesstoken get -s https://git.nfdi4plants.org
+```
 
-2. Create an api access token with a name of your choice. These tokens grant read and write access to all of your groups and projects. Make sure you save your access token upon successful creation, as this is the only time you will have access to the token (in case you lose the token, you can simply create a new one).
+A window within your browser will open, asking for your DataPLANT Log In. In case you are already logged in, the browser will directly display a Success message to you:
 
-<img src="media/datahub_personalAccessToken.png" alt="DataHUB Personal Access Token" width="600"/>
-<img src="media/datahub_personalAccessToken2.png" alt="DataHUB Personal Access Token" width="600"/>
+<img src="media/arcCommander_AccessToken.png" alt="DataHUB Personal Access Token" width="600"/>
 
 ### ARC synchronization
 
-#### Create and connect a remote repository
-
-1. In the [DataHUB](https://git.nfdi4plants.org), create a new blank repository by clicking "New project/repository" in the plus drop down menu of the navigation bar on top.  
-
-2. Connect your local ARC with the remote specifying the remote address with the flag `-r` in combination with the URL of your remote repository
+1. Synchronize your ARCs with the DataHUB using the command
 
 ```bash
-# Note: This command needs to be adapted with the respective URL of your DataHUB ARC
-# arc sync -r https://git.nfdi4plants.org/<YourUserName>/<YourARC>
+arc sync 
 ```
 
-3. Synchronize your ARC with the DataHUB using the command `arc sync`. The ARC Commander will ask for your credentials, where you need to enter your DataHUB handle (displayed on the DataHUB when clicking on your profile picture) and the newly generated access token.
+2. If you did not connect your local ARC with a remote one so far, you can specify the remote address with the flag `-r` followed by an URL, e.g.,
 
-<img src="media/arcCommander_syncRemote.png" alt="ARC Commander Sync Remote" width="600"/>
+```bash
+arc sync -r https://git.nfdi4plants.org/martinkuhl/QuickStart
+```
 
-4. If no repository exists under the given URL, the ARC Commander will produce an error ensuring that you spelled the URL correctly. Use `arc sync -f` to force synchronization to the specified URL.
+3. In case you want to create a new remote repository at this URL, it needs to be assembled as the following example: 
+```bash
+# https://git.nfdi4plants.org/<YourUserName>/<YourARC>
+```
 
-<img src="media/arcCommander_syncForce.png" alt="ARC Commander Sync Force" width="600"/>
+4. If no repository exists under the given URL, the ARC Commander will produce an error ensuring that you spelled the URL correctly. To force synchronization, use 
+
+```bash
+arc sync -f
+```
+
+<img src="media/arcCommander_syncForce1.png" alt="ARC Commander Sync Force" width="600"/>
 
 5. Check if the upload was successful by visiting your ARC at the respective URL in your browser.
 
 <img src="media/datahub_repository.png" alt="DataHUB repository" width="600"/>
+
+>Note: Alternatively, you can first create a new blank repository in the [DataHUB](https://git.nfdi4plants.org) by clicking "New project/repository" in the plus drop down menu of the navigation bar on top. Afterwards, you can sync your local ARC to the respective repository by adapting the URL to the newly generated one. 
+
+### Setting a git user
+
+Some users might want to use different signatures for different repositories, e.g. for developing software on GitHub and working on ARCs on [DataPLANT's DataHUB](htttps://git.nfdi4plants.org). Besides your global git configuration, you can store the information you want to use for editing ARCs within the ARC Commander config:
+
+```bash
+arc config set -g -n "general.gitname" -v "Name of choice"
+arc config set -g -n "general.gitemail" -v "Email of choice"
+```
+To transfer the information from the global ARC Commander config to the local git config of the ARC use
+
+```bash
+arc config setgituser
+```
 
 ### Invite collaborators
 
@@ -181,7 +202,7 @@ Briefly:
 - *Developers:* The choice for most people you want to invite to your ARC. Developers have read and write access, but cannot maintain the project on the DataHUB, e.g. inviting others.  
 - *Maintainers:* Gives the person the same rights as you have (except of removing you from your own project). This is recommended for inviting PIs or group leaders allowing them to add their group members for data upload or analysis to the project as well.
 
-<img src="media/datahub_members.png" alt="DataHUB members" width="600"/>
+<img src="media/datahub_members1.png" alt="DataHUB members" width="600"/>
 
 > Note: A detailed usage instruction for the ARC Commander can be found [here](https://github.com/nfdi4plants/arcCommander/wiki/Detailed-usage-instruction).
 
